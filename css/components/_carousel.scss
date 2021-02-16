@@ -1,0 +1,39 @@
+/**
+   Components
+**/
+
+//News
+.news-contents {
+   #main-carousel {
+      .carousel-cell {
+         width: 80%;
+      }
+   }
+}
+
+//About us
+.about-us {
+   &#main-carousel {
+      .carousel-cell {
+         width: 100%;
+      }
+   }
+}
+
+/* position dots in carousel */
+.flickity-page-dots {
+   bottom: -26px;
+ }
+ /* white circles */
+ .flickity-page-dots .dot {
+   width: 16px;
+   height: 16px;
+   opacity: 1;
+   background: transparent;
+   border: 2px solid white;
+ }
+ /* fill-in selected dot */
+ .flickity-page-dots .dot.is-selected {
+   background: white;
+ }
+ 

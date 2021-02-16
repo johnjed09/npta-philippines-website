@@ -1,0 +1,41 @@
+/**
+   Homepage Rule Sets
+**/
+
+#index__page {
+   background: url(../../assets/bg.svg) no-repeat center bottom fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   height: 100vh;
+}
+
+.main-headline {
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: $secondary-color;
+   padding-top: 1.875em !important;
+   padding-bottom: 1.875em !important;
+
+   @include respond-to("medium") {
+      bottom: 4.98125em;
+      padding-left: 1.375em;
+      padding-right: 1.375em;
+   }
+   @include respond-to("large") {
+      padding-left: 7.975em;
+      padding-right: 7.975em;
+   }
+
+   h1 {
+      text-align: center;
+   }
+
+   p {
+      padding-top: 1.2em;
+      text-align: left;
+   }
+}

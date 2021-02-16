@@ -1,0 +1,80 @@
+/**
+   Advocacy Page Rule Sets
+**/
+
+.advocacy__contents {
+   margin-top: 5.5em;
+   display: flex;
+   flex-flow: column wrap;
+   justify-content: space-between;
+   padding-top: 4.15rem;
+   padding-bottom: 4.15rem;
+
+   @include respond-to("medium") {
+      flex-flow: row nowrap;
+   }
+
+   .advocacy__sidebar {
+      text-align: center;
+      border: 1px solid $tertiary-sidenav-color;
+
+      @include respond-to("medium") {
+         width: 40%;
+         max-height: 28rem;
+         text-align: left;
+
+      }
+
+      @include respond-to("large") {
+         width: 35%;
+      }
+      .menu-title {
+         background-color: $font-primary;
+         color: $tertiary-sidenav-color;
+         padding: 1.1875rem;
+      }
+
+      .menu-list {
+         background-color: transparent;
+         display: block;
+
+         a {
+            text-align: center;
+            display: block;
+            padding: 1.1875rem;
+
+            &#item-active,
+            &:hover {
+               background-color: $primary-color;
+               color: $font-primary;
+            }
+         }
+      }
+   }
+
+   .menu-list__contents {
+      padding-top: 2rem;
+
+      @include respond-to("medium") {
+         padding: 0;
+         width: 55%;
+      }
+
+      @include respond-to("large") {
+         width: 60%;
+      }
+
+      // .title {
+
+      // }
+
+      p {
+         padding-top: 1.2rem;
+         text-align: justify;
+
+         @include respond-to("medium") {
+            text-align: left;
+         }
+      }
+   }
+}

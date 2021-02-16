@@ -1,0 +1,29 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+}
+
+body {
+   color: $font-primary;
+   background-color: #003e5a;
+}
+
+a {
+   color: $font-primary;
+   text-decoration: none !important;
+}
+
+ul {
+   list-style-type: none !important;
+   margin: 0;
+   padding: 0;
+}
+
+p {
+   margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   margin-top: 0;
+   margin-bottom: 0;
+}

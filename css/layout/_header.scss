@@ -1,0 +1,187 @@
+header {
+   display: flex;
+   justify-content: space-between;
+   padding-top: 1.125rem !important;
+   padding-bottom: 1.125rem !important;
+
+   position: fixed;
+   width: 100%;
+   top: 0;
+   z-index: 1;
+
+   background: rgb(116, 189, 238);
+   background: linear-gradient(
+      rgba(116, 189, 238, 1) 0%,
+      rgba(148, 204, 241, 1) 50%,
+      rgba(192, 223, 244, 1) 80%,
+      rgba(241, 245, 248, 1) 100%
+   );
+   -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.7);
+   -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.7);
+   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.7);
+   @include respond-to("medium") {
+      background: $font-primary;
+      padding-top: 0.8125em !important;
+      padding-bottom: 0.8125rem !important;
+   }
+
+   .logo {
+      img {
+         width: 10.25rem;
+         @include respond-to("medium") {
+            width: 12.1875rem;
+         }
+      }
+   }
+
+   #header-nav {
+      @include respond-to("medium") {
+         background: rgb(255, 255, 255);
+         background: linear-gradient(
+            114deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 1) 10%,
+            rgba(0, 125, 181, 1) 20%,
+            rgba(0, 125, 181, 1) 100%
+         );
+         margin-right: -1.5rem;
+         padding-left: 8rem;
+
+         &.nav-bg {
+            background: $font-primary;
+            background: linear-gradient(114deg, $font-primary 0%, $font-primary 10%, #007db5 20%, #007db5 100%);
+            margin: -0.8em -1.4em -0.8em auto;
+            padding-left: 8em;
+            @include respond-to("large") {
+               padding-left: 10em;
+               margin-right: -8em !important;
+            }
+         }
+      }
+
+      .hamburger {
+         cursor: pointer;
+         width: 2.25rem;
+         margin-top: 0.63575rem;
+         margin-bottom: 0.63575rem;
+         @include respond-to("medium") {
+            display: none;
+         }
+      }
+
+      ul {
+         display: none;
+         @include respond-to("medium") {
+            display: table;
+            margin: 1.5rem 0;
+            padding-right: 1.375rem;
+
+            li {
+               padding: 0.4rem 1rem;
+               position: relative;
+               display: table-cell;
+
+               a {
+                  &#current,
+                  &:hover {
+                     text-shadow: 0px 0px 0px $font-primary;
+                     text-decoration: none;
+                     color: $font-primary;
+
+                     &:after {
+                        width: 100%;
+                        left: 0;
+                     }
+                  }
+
+                  &:after {
+                     background: none repeat scroll 0 0 transparent;
+                     bottom: 0;
+                     content: "";
+                     display: block;
+                     height: 2px;
+                     left: 50%;
+                     position: absolute;
+                     background: $font-primary;
+                     -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                     transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                     width: 0;
+                  }
+               }
+            }
+         }
+         @include respond-to("large") {
+            padding-right: 7.5rem;
+         }
+      }
+   }
+}
+
+//hamburger function
+.active {
+   #backdrop {
+      // @include dimension($height: 100vh, $width: 100%, $top: 0, $left: 0);
+      z-index: 2;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.5);
+   }
+
+   #sidebar-container {
+      // @include dimension($height: 100%, $width: 60%, $top: 0, $left: 0);
+
+      z-index: 2;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 60%;
+      height: 100%;
+
+      background: $primary-color;
+      -webkit-box-shadow: 4px 0px 10px -2px$secondary-color;
+      -moz-box-shadow: 4px 0px 10px -2px$secondary-color;
+      box-shadow: 4px 0px 10px -2px$secondary-color;
+   }
+
+   #header-nav {
+      ul {
+         // @include dimension($width: 60%, $top: 5rem, $left: 0);
+
+         z-index: 2;
+         position: fixed;
+         top: 5.5rem;
+         left: 0;
+
+         width: 60%;
+
+         display: block;
+         -webkit-box-shadow: 0px -2px 10px -4px #000000bf;
+         -moz-box-shadow: 0px -2px 10px -4px #000000bf;
+         box-shadow: 0px -2px 10px -4px #000000bf;
+         background: #000000b3;
+         background: linear-gradient(#000000b3 0%, #0073b5 100%);
+
+         a {
+            text-align: center;
+            display: block;
+            padding: 0.9375rem 2.875rem;
+
+            &:hover {
+               background-color: $primary-color;
+               color: $font-primary;
+            }
+
+            &#current {
+               background-color: $primary-color;
+               color: $font-primary;
+            }
+         }
+      }
+   }
+}

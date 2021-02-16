@@ -1,0 +1,7 @@
+.wrapper {
+   padding: 0 1.375rem;
+   margin: 0;
+   @include respond-to("large") {
+      padding: 0 7.975rem;
+   }
+}
